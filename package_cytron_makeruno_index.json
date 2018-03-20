@@ -13,13 +13,13 @@
           "name": "Cytron AVR Boards",
           "architecture": "avr",
           "version": "1.0.0-rc1",
-          "category": "Arduino",
+          "category": "Cytron",
           "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc1/cytron-makeruno-1.0.0-rc1.zip",
           "archiveFileName": "cytron-makeruno-1.0.0-rc1.zip",
-          "checksum": "SHA-256:9755b372479cf7e04b3e74f9c61fd0ad2990d3ceee4fbd43e7abeb6b3ca2a15c",
-          "size": "602597",
+          "checksum": "SHA-256:a4369e5a35933f876fc97e2d0174b8b9a7e8c21f41024f6946d17cb0e18addf8",
+          "size": "602598",
           "help": {
-            "online": "https://forum.cytron.io/"
+            "online": "https://forum.cytron.com.io/"
           },
           "boards": [
             {
