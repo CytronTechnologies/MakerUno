@@ -11,7 +11,7 @@ before_script:
 
 script:
 - ver=`git describe --tags --always`
-- .package/build_boards_manager_package.sh
+- "./package/build_boards_manager_package.sh"
 - cd ~/tmp
 - git add package_cytron_makeruno_index.json
 - git commit -m "MakerUno version $ver release"
