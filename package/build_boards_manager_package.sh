@@ -16,8 +16,12 @@ if [ -e "package/arduino-version.txt" ]; then
 fi
 echo $ARDUINO_VER
 
-REPO=$(basename `git rev-parse --show-toplevel`)
-PKG_URL=https://github.com/$REPO/releases/download/$ver/$package_name.zip
+if [ "$TRAVIS_REPO_SLUG" = "" ]; then
+TRAVIS_REPO_SLUG=$(basename `git rev-parse --show-toplevel`)
+endif
+echo "Repo: $TRAVIS_REPO_SLUG"
+
+PKG_URL=https://github.com/$TRAVIS_REPO_SLUG/releases/download/$ver/$package_name.zip
 DOC_URL=https://forum.cytron.com.io/
 
 # Create directory for the package
@@ -30,7 +34,7 @@ mkdir -p tmp
 
 # Download Arduino Core
 wget -qO avr-${ARDUINO_VER}.tar.bz2 http://downloads.arduino.cc/cores/avr-${ARDUINO_VER}.tar.bz2
-tar -xvf avr-${ARDUINO_VER}.tar.bz2 -C tmp
+tar -zxf avr-${ARDUINO_VER}.tar.bz2 -C tmp
 rm -f avr-*
 cp -R tmp/avr/* $srcdir/$outdir
 rm -rf tmp
@@ -92,7 +96,7 @@ chmod 600 ~/.ssh/makeruno_deploy
 echo -e "Host $DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/makeruno_deploy" >> ~/.ssh/config
 
 #update package_cytron_makeruno_index.json
-git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:$REPO.git ~/tmp
+git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:$TRAVIS_REPO_SLUG.git ~/tmp
 cp $new_json ~/tmp/
 rm $new_json
 
