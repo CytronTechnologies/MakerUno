@@ -1,0 +1,35 @@
+{
+  "packages": [
+    {
+      "name": "cytron",
+      "maintainer": "Cytron Technologies Sdn Bhd",
+      "websiteURL": "https://www.cytron.io",
+      "email": "support@cytron.io",
+      "help": {
+        "online": "https://forum.cytron.io/"
+      },
+      "platforms": [
+        {
+          "name": "Cytron AVR Boards",
+          "architecture": "avr",
+          "version": "",
+          "category": "Arduino",
+          "url": "",
+          "archiveFileName": "",
+          "checksum": "",
+          "size": "",
+          "help": {
+            "online": "https://forum.cytron.io/"
+          },
+          "boards": [
+            {
+              "name": "Maker Uno"
+            }
+          ],
+          "toolsDependencies": []
+        }
+      ],
+      "tools": []
+    }
+  ]
+}

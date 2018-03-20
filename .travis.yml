@@ -1,0 +1,35 @@
+sudo: false
+
+language: bash
+
+os:
+- linux
+
+before_script:
+- git config --global user.email "bengchet@cytron.com.my"
+- git config --global user.name "bengchet (via TravisCI)"
+
+script:
+- ver=`git describe --tags --always`
+- .package/build_boards_manager_package.sh
+- cd ~/tmp
+- git add package_cytron_makeruno_index.json
+- git commit -m "MakerUno version $ver release"
+
+notifications:
+  email:
+    recipients:
+    - bengchet@cytron.io
+    on_success: change
+    on_failure: change
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: MgHduF/kUlygjuiNn/BC6WwM3thYzNIoz+0Gcu/8D+lCb29SAZvTxiuAxSBI2IwpJfwLcB63PuN2WJhP9wHyT9I+wAXjLow4OxWaXUGhWYbwfjwHyTbiDKLO9Ua9qKyRsGzdGVznEXXlZjW//c9Xp6xpaFS/Dkz68kOsk8+jX1VwmGPBfnEsS9JBC17xQsL8kEsgqk1nkLWSpZcz+BnBVCLack0BgAOC+9KluZnL/Y5QNso0IWn9x5miHh8pAwD740dGJ/1holVBwjoQw9/Q/Jy6AvaJSRHUe6u8XnFfIeXawLLM3tzRQZ76HKsUpeGgzSPNSt5wjG90MyqwPTNV4Yq+lzn5px9AaqZtpCwUEfX+Yd/R7Fo0B0YiqYq46SDygY+YnCEcdtDwAvNAfgZ6F+pw8qaGf3fQi3Y8wv15eVMoZYpAjbleASU3g0OFRbIiEx7cQ6/NvubvAgqGeX7D3481v6j6KIg2yQ1YBI+D3EA61zwAgL9Jpd2DQuhroUtI3+8yRhwA/qRYE9FPIgcnR/Alr3pOcRDzcQIzTkzUvUwxBD9hajSY6Qpqz4/h41uudohEYv8NEvTaqauO4+3ygR92wjNGeyM7t5EtO9quKoPDOCeJkjf0/R13NjmlsVmDb22gjCzqRfeR4NqlylDMn4MZwTNeKtDn4vbJ1oen+tY=
+  file_glob: true
+  file: "$TRAVIS_BUILD_DIR/package/versions/$ver/*"
+  on:
+    repo: CytronTechnologies/MakerUno
+    tags: true
