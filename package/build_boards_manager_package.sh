@@ -34,7 +34,7 @@ mkdir -p tmp
 
 # Download Arduino Core
 wget -qO avr-${ARDUINO_VER}.tar.bz2 http://downloads.arduino.cc/cores/avr-${ARDUINO_VER}.tar.bz2
-tar -zxf avr-${ARDUINO_VER}.tar.bz2 -C tmp
+tar xvjf avr-${ARDUINO_VER}.tar.bz2 -C tmp
 rm -f avr-*
 cp -R tmp/avr/* $srcdir/$outdir
 rm -rf tmp
