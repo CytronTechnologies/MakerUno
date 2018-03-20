@@ -62,7 +62,7 @@ echo SHA-256: $sha
 # Download latest package_cytron_arm_index.json
 old_json=package_cytron_makeruno_stable.json 
 
-if [ -e "\$srcdir/package_cytron_makeruno_index.json" ]; then
+if [ -e $srcdir/package_cytron_makeruno_index.json ]; then
 cat $srcdir/package_cytron_makeruno_index.json > $old_json
 else
 cat $srcdir/package/package_cytron_makeruno_index.template.json > $old_json
@@ -84,7 +84,7 @@ jq ".packages[0].platforms[0].version = \"$ver\" | \
     > $new_json
 
 set +e
-if [ -e "\$srcdir/package_cytron_makeruno_index.json" ]; then
+if [ -e $srcdir/package_cytron_makeruno_index.json ]; then
 echo "Merging package_cytron_makeruno_index.json"
 python ../../merge_packages.py $new_json $old_json >tmp && mv tmp $new_json && rm $old_json
 else
