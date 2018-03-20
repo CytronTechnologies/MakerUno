@@ -34,8 +34,8 @@ deploy:
     repo: CytronTechnologies/MakerUno
     tags: true
 
-  after_deploy:
-  - cd ~/tmp
-  - git push origin master
+after_deploy:
+- cd ~/tmp
+- git push origin master
 
 
