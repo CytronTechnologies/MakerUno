@@ -1,0 +1,35 @@
+{
+  "packages": [
+    {
+      "name": "cytron",
+      "maintainer": "Cytron Technologies Sdn Bhd",
+      "websiteURL": "https://www.cytron.io",
+      "email": "support@cytron.io",
+      "help": {
+        "online": "https://forum.cytron.io/"
+      },
+      "platforms": [
+        {
+          "name": "Maker Uno",
+          "architecture": "makeruno",
+          "version": "1.0.0-rc1",
+          "category": "Arduino",
+          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc1/cytron-makeruno-1.0.0-rc1.zip",
+          "archiveFileName": "cytron-makeruno-1.0.0-rc1.zip",
+          "checksum": "SHA-256:6434c3c6b8d40fb8fad7109a225178102a92027dfc1e1eddc0b6dc5c368a803a",
+          "size": "604393",
+          "help": {
+            "online": "https://forum.cytron.io/"
+          },
+          "boards": [
+            {
+              "name": "Maker Uno"
+            }
+          ],
+          "toolsDependencies": []
+        }
+      ],
+      "tools": []
+    }
+  ]
+}
