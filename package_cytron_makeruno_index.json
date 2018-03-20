@@ -1,35 +1,54 @@
 {
   "packages": [
     {
-      "name": "cytron",
-      "maintainer": "Cytron Technologies Sdn Bhd",
-      "websiteURL": "https://www.cytron.io",
-      "email": "support@cytron.io",
+      "maintainer": "Cytron Technologies Sdn Bhd", 
       "help": {
         "online": "https://forum.cytron.io/"
-      },
+      }, 
+      "websiteURL": "https://www.cytron.io", 
       "platforms": [
         {
-          "name": "Cytron AVR Boards",
-          "architecture": "avr",
-          "version": "1.0.0-rc1",
-          "category": "Cytron",
-          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc1/cytron-makeruno-1.0.0-rc1.zip",
-          "archiveFileName": "cytron-makeruno-1.0.0-rc1.zip",
-          "checksum": "SHA-256:a4369e5a35933f876fc97e2d0174b8b9a7e8c21f41024f6946d17cb0e18addf8",
-          "size": "602598",
+          "category": "Cytron", 
+          "name": "Cytron AVR Boards", 
+          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc1/cytron-makeruno-1.0.0-rc1.zip", 
+          "checksum": "SHA-256:a4369e5a35933f876fc97e2d0174b8b9a7e8c21f41024f6946d17cb0e18addf8", 
           "help": {
             "online": "https://forum.cytron.com.io/"
-          },
+          }, 
+          "version": "1.0.0-rc1", 
+          "architecture": "avr", 
+          "archiveFileName": "cytron-makeruno-1.0.0-rc1.zip", 
           "boards": [
             {
               "name": "Maker Uno"
             }
-          ],
-          "toolsDependencies": []
+          ], 
+          "toolsDependencies": [], 
+          "size": "602598"
+        }, 
+        {
+          "category": "Cytron", 
+          "name": "Cytron AVR Boards", 
+          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc2/cytron-makeruno-1.0.0-rc2.zip", 
+          "checksum": "SHA-256:30c0dfdb9fc1ce0401489ac3db4e49f46594efb96ba318d5d5876cc51689bb4e", 
+          "help": {
+            "online": "https://forum.cytron.io/"
+          }, 
+          "version": "1.0.0-rc2", 
+          "architecture": "avr", 
+          "archiveFileName": "cytron-makeruno-1.0.0-rc2.zip", 
+          "boards": [
+            {
+              "name": "Maker Uno"
+            }
+          ], 
+          "toolsDependencies": [], 
+          "size": "602598"
         }
-      ],
-      "tools": []
+      ], 
+      "tools": [], 
+      "email": "support@cytron.io", 
+      "name": "cytron"
     }
   ]
 }
