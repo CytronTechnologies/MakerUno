@@ -11,8 +11,8 @@ echo "Package name: $package_name"
 # by default we will be using arduino core version stated in arduino-version
 # else we will fall back to version 1.6.21
 ARDUINO_VER=1.6.21
-if [ -e package/arduino-version.txt ]; then
-	ARDUINO_VER=`cat arduino-version.txt`
+if [ -e "package/arduino-version.txt" ]; then
+	ARDUINO_VER=`cat package/arduino-version.txt`
 fi
 echo $ARDUINO_VER
 
