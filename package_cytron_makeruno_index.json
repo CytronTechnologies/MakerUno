@@ -1,0 +1,35 @@
+{
+  "packages": [
+    {
+      "name": "cytron",
+      "maintainer": "Cytron Technologies Sdn Bhd",
+      "websiteURL": "https://www.cytron.io",
+      "email": "support@cytron.io",
+      "help": {
+        "online": "https://forum.cytron.io/"
+      },
+      "platforms": [
+        {
+          "name": "Cytron AVR Boards",
+          "architecture": "avr",
+          "version": "1.0.0-rc1",
+          "category": "Arduino",
+          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc1/cytron-makeruno-1.0.0-rc1.zip",
+          "archiveFileName": "cytron-makeruno-1.0.0-rc1.zip",
+          "checksum": "SHA-256:9755b372479cf7e04b3e74f9c61fd0ad2990d3ceee4fbd43e7abeb6b3ca2a15c",
+          "size": "602597",
+          "help": {
+            "online": "https://forum.cytron.com.io/"
+          },
+          "boards": [
+            {
+              "name": "Maker Uno"
+            }
+          ],
+          "toolsDependencies": []
+        }
+      ],
+      "tools": []
+    }
+  ]
+}
