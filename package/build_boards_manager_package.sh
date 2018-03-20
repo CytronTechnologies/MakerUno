@@ -18,7 +18,7 @@ echo $ARDUINO_VER
 
 if [ "$TRAVIS_REPO_SLUG" = "" ]; then
 TRAVIS_REPO_SLUG=$(basename `git rev-parse --show-toplevel`)
-endif
+fi
 echo "Repo: $TRAVIS_REPO_SLUG"
 
 PKG_URL=https://github.com/$TRAVIS_REPO_SLUG/releases/download/$ver/$package_name.zip
