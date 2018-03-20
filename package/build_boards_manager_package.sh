@@ -22,7 +22,7 @@ fi
 echo "Repo: $TRAVIS_REPO_SLUG"
 
 PKG_URL=https://github.com/$TRAVIS_REPO_SLUG/releases/download/$ver/$package_name.zip
-DOC_URL=https://forum.cytron.com.io/
+DOC_URL=https://forum.cytron.io/
 
 # Create directory for the package
 outdir=package/versions/$ver/$package_name
@@ -34,7 +34,7 @@ mkdir -p tmp
 
 # Download Arduino Core
 wget -qO avr-${ARDUINO_VER}.tar.bz2 http://downloads.arduino.cc/cores/avr-${ARDUINO_VER}.tar.bz2
-tar xvjf avr-${ARDUINO_VER}.tar.bz2 -C tmp
+tar xjf avr-${ARDUINO_VER}.tar.bz2 -C tmp
 rm -f avr-*
 cp -R tmp/avr/* $srcdir/$outdir
 rm -rf tmp
@@ -48,8 +48,6 @@ cp bootloaders/optiboot/optiboot_makeruno.hex $srcdir/$outdir/bootloaders/optibo
 cp boards.txt $srcdir/$outdir/boards.txt
 find $srcdir/$outdir/platform.txt -exec sed -i 's|name=Arduino AVR Boards|name=Cytron AVR Boards|g' {} \;
 cp -R libraries/* $srcdir/$outdir/libraries/
-ls libraries/* 
-ls $srcdir/$outdir/libraries/*
 pushd package/versions/$ver
 echo "Making $package_name.zip"
 zip -qr $package_name.zip $package_name
