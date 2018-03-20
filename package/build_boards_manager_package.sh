@@ -68,6 +68,9 @@ else
 cat $srcdir/package/package_cytron_makeruno_index.template.json > $old_json
 fi
 
+echo "Getting latest package_cytron_makeruno_index.json"
+cat $old_json
+
 new_json=package_cytron_makeruno_index.json
 
 echo "Making package_cytron_makeruno_index.json"
@@ -82,6 +85,7 @@ jq ".packages[0].platforms[0].version = \"$ver\" | \
 
 set +e
 if [ -e "\$srcdir/package_cytron_makeruno_index.json" ]; then
+echo "Merging package_cytron_makeruno_index.json"
 python ../../merge_packages.py $new_json $old_json >tmp && mv tmp $new_json && rm $old_json
 else
 rm $old_json
