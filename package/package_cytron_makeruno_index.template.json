@@ -10,10 +10,10 @@
       },
       "platforms": [
         {
-          "name": "Cytron AVR Boards",
-          "architecture": "avr",
+          "name": "Maker Uno",
+          "architecture": "makeruno",
           "version": "",
-          "category": "Cytron",
+          "category": "Arduino",
           "url": "",
           "archiveFileName": "",
           "checksum": "",

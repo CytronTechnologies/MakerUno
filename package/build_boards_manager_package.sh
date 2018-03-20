@@ -1,14 +1,12 @@
 #!/bin/bash
-#
 
 # Figure out how will the package be called
 ver=`git describe --tags --always`
-
 package_name=cytron-makeruno-$ver
 echo "Version: $ver"
 echo "Package name: $package_name"
 
-# by default we will be using arduino core version stated in arduino-version
+# by default we will be using arduino core version stated in arduino-version.txt
 # else we will fall back to version 1.6.21
 ARDUINO_VER=1.6.21
 if [ -e "package/arduino-version.txt" ]; then
@@ -17,7 +15,7 @@ fi
 echo $ARDUINO_VER
 
 if [ "$TRAVIS_REPO_SLUG" = "" ]; then
-TRAVIS_REPO_SLUG=$(basename `git rev-parse --show-toplevel`)
+TRAVIS_REPO_SLUG=CytronTechnologies/MakerUno
 fi
 echo "Repo: $TRAVIS_REPO_SLUG"
 
@@ -46,7 +44,8 @@ rm -rf $srcdir/$outdir/variants
 cp cores/arduino/main.cpp $srcdir/$outdir/cores/arduino/main.cpp
 cp bootloaders/optiboot/optiboot_makeruno.hex $srcdir/$outdir/bootloaders/optiboot/
 cp boards.txt $srcdir/$outdir/boards.txt
-find $srcdir/$outdir/platform.txt -exec sed -i 's|name=Arduino AVR Boards|name=Cytron AVR Boards|g' {} \;
+find $srcdir/$outdir/platform.txt -exec sed -i 's|name=Arduino AVR Boards|name=Maker Uno|g' {} \;
+find $srcdir/$outdir/platform.txt -exec sed -i 's|version='$ARDUINO_VER'|version='$ver'|g' {} \;
 cp -R libraries/* $srcdir/$outdir/libraries/
 pushd package/versions/$ver
 echo "Making $package_name.zip"
