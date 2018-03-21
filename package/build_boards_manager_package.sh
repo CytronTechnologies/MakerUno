@@ -99,6 +99,5 @@ echo -e "Host $DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME
 #update package_cytron_makeruno_index.json
 git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:$TRAVIS_REPO_SLUG.git ~/tmp
 cp $new_json ~/tmp/
-rm $new_json
 
 popd
