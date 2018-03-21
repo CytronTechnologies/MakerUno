@@ -38,6 +38,7 @@ cp -R tmp/avr/* $srcdir/$outdir
 rm -rf tmp
 
 # remove some files and add our own files
+rm -rf $srcdir/$outdir/firmwares
 rm -rf $srcdir/$outdir/cores/main.cpp
 cp cores/arduino/main.cpp $srcdir/$outdir/cores/arduino/main.cpp
 cp bootloaders/optiboot/optiboot_makeruno.hex $srcdir/$outdir/bootloaders/optiboot/
