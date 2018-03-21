@@ -1,5 +1,5 @@
 # 1 "baudcheck.c"
-# 1 "/home/beng/GitHub/Cytron/cytron-avr/bootloaders/optiboot//"
+# 1 "/home/beng/GitHub/Cytron/Boards/MakerUno/bootloaders/optiboot//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "baudcheck.c"

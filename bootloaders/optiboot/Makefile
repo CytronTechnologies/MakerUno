@@ -190,8 +190,13 @@ ifdef SINGLESPEED
 SS_CMD = -DSINGLESPEED=1
 endif
 
+ifdef MAKER_UNO
+MAKER_UNO_CMD = -DMAKER_UNO
+dummy = FORCE
+endif
+
 COMMON_OPTIONS = $(BAUD_RATE_CMD) $(LED_START_FLASHES_CMD) $(BIGBOOT_CMD)
-COMMON_OPTIONS += $(SOFT_UART_CMD) $(LED_DATA_FLASH_CMD) $(LED_CMD) $(SS_CMD)
+COMMON_OPTIONS += $(SOFT_UART_CMD) $(LED_DATA_FLASH_CMD) $(LED_CMD) $(SS_CMD) $(MAKER_UNO_CMD)
 
 #UART is handled separately and only passed for devices with more than one.
 ifdef UART
@@ -300,15 +305,6 @@ atmega328: AVR_FREQ ?= 16000000L
 atmega328: LDSECTIONS  = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
 atmega328: $(PROGRAM)_atmega328.hex
 atmega328: $(PROGRAM)_atmega328.lst
-
-# added maker uno
-makeruno: TARGET = atmega328
-makeruno: MCU_TARGET = atmega328p
-makeruno: CFLAGS += $(COMMON_OPTIONS)
-makeruno: AVR_FREQ ?= 16000000L
-makeruno: LDSECTIONS  = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
-makeruno: $(PROGRAM)_makeruno.hex
-makeruno: $(PROGRAM)_makeruno.lst
 
 atmega328_isp: atmega328
 atmega328_isp: TARGET = atmega328

@@ -264,9 +264,6 @@ optiboot_version = 256 * (OPTIBOOT_MAJVER + OPTIBOOT_CUSTOMVER) + OPTIBOOT_MINVE
  */
 #include "stk500.h"
 
-/* For Maker Uno, we disable the led flashes during power up to avoid confusion */
-#define LED_START_FLASHES 0
-
 #ifndef LED_START_FLASHES
 #define LED_START_FLASHES 0
 #endif
@@ -448,8 +445,8 @@ void appStart(uint8_t rstFlags) __attribute__((naked));
 int main(void)
 {
 /* Set Arduino digital pins as output as well */
-/* Maker Uno */
-#if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__)
+/* Maker Uno only*/
+#ifdef MAKER_UNO
   DDRD |= 0xFC;
   PORTD &= ~0xFC;
   DDRC |= 0x3F;
