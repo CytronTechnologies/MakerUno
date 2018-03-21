@@ -24,6 +24,6 @@ makeruno.build.mcu=atmega328p
 makeruno.build.f_cpu=16000000L
 makeruno.build.board=MAKER_UNO
 makeruno.build.core=arduino
-makeruno.build.variant=standard
+makeruno.build.variant=arduino:standard
 
 ##############################################################

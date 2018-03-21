@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "cytron",
+      "name": "makeruno",
       "maintainer": "Cytron Technologies Sdn Bhd",
       "websiteURL": "https://www.cytron.io",
       "email": "support@cytron.io",
@@ -11,9 +11,9 @@
       "platforms": [
         {
           "name": "Maker Uno",
-          "architecture": "makeruno",
+          "architecture": "avr",
           "version": "",
-          "category": "Arduino",
+          "category": "Cytron",
           "url": "",
           "archiveFileName": "",
           "checksum": "",
