@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "cytron",
+      "name": "arduino",
       "maintainer": "Cytron Technologies Sdn Bhd",
       "websiteURL": "https://www.cytron.io",
       "email": "support@cytron.io",
