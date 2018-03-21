@@ -14,17 +14,17 @@
           }, 
           "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc1/cytron-makeruno-1.0.0-rc1.zip", 
           "checksum": "SHA-256:6434c3c6b8d40fb8fad7109a225178102a92027dfc1e1eddc0b6dc5c368a803a", 
-          "name": "Maker Uno", 
           "version": "1.0.0-rc1", 
           "architecture": "makeruno", 
           "archiveFileName": "cytron-makeruno-1.0.0-rc1.zip", 
-          "size": "604393", 
-          "toolsDependencies": [], 
           "boards": [
             {
               "name": "Maker Uno"
             }
-          ]
+          ], 
+          "size": "604393", 
+          "toolsDependencies": [], 
+          "name": "Maker Uno"
         }, 
         {
           "category": "Arduino", 
@@ -33,10 +33,14 @@
           }, 
           "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc2/cytron-makeruno-1.0.0-rc2.zip", 
           "checksum": "SHA-256:fb00937d82c58deac6e1f33db6cee9e46182a71ebd1f5cd01880e7108ee12b5a", 
-          "name": "Maker Uno", 
           "version": "1.0.0-rc2", 
           "architecture": "makeruno", 
           "archiveFileName": "cytron-makeruno-1.0.0-rc2.zip", 
+          "boards": [
+            {
+              "name": "Maker Uno"
+            }
+          ], 
           "size": "604394", 
           "toolsDependencies": [
             {
@@ -55,6 +59,21 @@
               "name": "arduinoOTA"
             }
           ], 
+          "name": "Maker Uno"
+        }, 
+        {
+          "category": "Arduino", 
+          "help": {
+            "online": "https://forum.cytron.io/"
+          }, 
+          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc3/cytron-makeruno-1.0.0-rc3.zip", 
+          "checksum": "SHA-256:eeb7b6031ca89fe2f93e1a0991900d594fe2274e052223aad82bc81383f21a45", 
+          "name": "Maker Uno", 
+          "version": "1.0.0-rc3", 
+          "architecture": "makeruno", 
+          "archiveFileName": "cytron-makeruno-1.0.0-rc3.zip", 
+          "size": "6034543", 
+          "toolsDependencies": [], 
           "boards": [
             {
               "name": "Maker Uno"
@@ -66,11 +85,11 @@
           "help": {
             "online": "https://forum.cytron.io/"
           }, 
-          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc3/cytron-makeruno-1.0.0-rc3.zip", 
-          "checksum": "SHA-256:eeb7b6031ca89fe2f93e1a0991900d594fe2274e052223aad82bc81383f21a45", 
-          "version": "1.0.0-rc3", 
+          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc4/cytron-makeruno-1.0.0-rc4.zip", 
+          "checksum": "SHA-256:3fc0ce241665ffde53f3f15be151a2dc88929249f59c532b5334f24904a86c84", 
+          "version": "1.0.0-rc4", 
           "architecture": "makeruno", 
-          "archiveFileName": "cytron-makeruno-1.0.0-rc3.zip", 
+          "archiveFileName": "cytron-makeruno-1.0.0-rc4.zip", 
           "boards": [
             {
               "name": "Maker Uno"
@@ -83,26 +102,42 @@
         {
           "category": "Arduino", 
           "name": "Maker Uno", 
-          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc4/cytron-makeruno-1.0.0-rc4.zip", 
-          "checksum": "SHA-256:3fc0ce241665ffde53f3f15be151a2dc88929249f59c532b5334f24904a86c84", 
+          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.0.0-rc5/cytron-makeruno-1.0.0-rc5.zip", 
+          "checksum": "SHA-256:077c0c2c85de20f3b2af52923efb3a76e0b4d46896b6faadcabf0bbbca5daea1", 
           "help": {
             "online": "https://forum.cytron.io/"
           }, 
-          "version": "1.0.0-rc4", 
+          "version": "1.0.0-rc5", 
           "architecture": "makeruno", 
-          "archiveFileName": "cytron-makeruno-1.0.0-rc4.zip", 
+          "archiveFileName": "cytron-makeruno-1.0.0-rc5.zip", 
           "boards": [
             {
               "name": "Maker Uno"
             }
           ], 
-          "toolsDependencies": [], 
-          "size": "6034543"
+          "toolsDependencies": [
+            {
+              "packager": "arduino", 
+              "version": "4.9.2-atmel3.5.4-arduino2", 
+              "name": "avr-gcc"
+            }, 
+            {
+              "packager": "arduino", 
+              "version": "6.3.0-arduino9", 
+              "name": "avrdude"
+            }, 
+            {
+              "packager": "arduino", 
+              "version": "1.1.1", 
+              "name": "arduinoOTA"
+            }
+          ], 
+          "size": "634875"
         }
       ], 
       "tools": [], 
       "email": "support@cytron.io", 
-      "name": "arduino"
+      "name": "cytron"
     }
   ]
 }
