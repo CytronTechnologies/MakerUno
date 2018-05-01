@@ -40,11 +40,9 @@ int main(void)
   USBDevice.attach();
 #endif
 
-  // Set all digital pins LED at Maker Uno to LOW
-  for (int pin = 2; pin < 14; pin++)
-  {
-    pinMode(pin, OUTPUT);
-  }
+  // Set all digital pins to pullup
+  PORTB = 0b00111111; // Pin 8 to 13
+  PORTD = 0b11111100; // Pin 2 to 7
 
   setup();
 
