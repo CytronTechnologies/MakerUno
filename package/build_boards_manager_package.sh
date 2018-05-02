@@ -98,8 +98,8 @@ chmod 600 ~/.ssh/makeruno_deploy
 echo -e "Host $DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/makeruno_deploy" >> ~/.ssh/config
 
 #update package_cytron_makeruno_index.json
-git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:$TRAVIS_REPO_SLUG.git ~/tmp
-cp $new_json ~/tmp/
+git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:$TRAVIS_REPO_SLUG.git ~/tmp/makeruno
+cp $new_json ~/tmp/makeruno
 
 # deploy key for CytronTechnologies.github.io repo
 echo -n $DEPLOY_KEY > ~/.ssh/deploy_b64
@@ -108,8 +108,8 @@ chmod 600 ~/.ssh/deploy
 echo -e "Host $DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/deploy" >> ~/.ssh/config
 
 #update package_cytron_index.json
-git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:CytronTechnologies.github.io.git ~/tmp2
-cp $new_json ~/tmp2/
+git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:CytronTechnologies.github.io.git ~/tmp/cytron
+cp $new_json ~/tmp/cytron
 
 
 popd
