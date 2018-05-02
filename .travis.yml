@@ -12,7 +12,10 @@ before_script:
 script:
 - ver=`git describe --tags --always`
 - "./package/build_boards_manager_package.sh"
-- cd ~/tmp
+- cd ~/tmp/makeruno
+- git add package_cytron_makeruno_index.json
+- git commit -m "MakerUno version $ver release"
+- cd ~/tmp/cytron
 - git add package_cytron_makeruno_index.json
 - git commit -m "MakerUno version $ver release"
 
@@ -35,7 +38,9 @@ deploy:
     tags: true
 
 after_deploy:
-- cd ~/tmp
+- cd ~/tmp/makeruno
+- git push origin master
+- cd ~/tmp/cytron
 - git push origin master
 
 
