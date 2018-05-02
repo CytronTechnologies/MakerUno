@@ -18,7 +18,7 @@ makeruno.bootloader.high_fuses=0xDE
 makeruno.bootloader.extended_fuses=0xFD
 makeruno.bootloader.unlock_bits=0x3F
 makeruno.bootloader.lock_bits=0x0F
-makeruno.bootloader.file=optiboot/optiboot_makeruno.hex
+makeruno.bootloader.file=optiboot/optiboot_atmega328.hex
 
 makeruno.build.mcu=atmega328p
 makeruno.build.f_cpu=16000000L
