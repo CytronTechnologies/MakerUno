@@ -46,7 +46,9 @@ cp bootloaders/optiboot/optiboot_makeruno.hex $srcdir/$outdir/bootloaders/optibo
 cp boards.txt $srcdir/$outdir/boards.txt
 find $srcdir/$outdir/platform.txt -exec sed -i 's|name=Arduino AVR Boards|name=Maker Uno|g' {} \;
 find $srcdir/$outdir/platform.txt -exec sed -i 's|version='$ARDUINO_VER'|version='$ver'|g' {} \;
+git clone https://github.com/CytronTechnologies/MakerUno_Examples.git libraries
 cp -R libraries/* $srcdir/$outdir/libraries/
+ls -a $srcdir/$outdir/libraries/
 pushd package/versions/$ver
 echo "Making $package_name.zip"
 zip -qr $package_name.zip $package_name
