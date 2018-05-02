@@ -444,15 +444,11 @@ void appStart(uint8_t rstFlags) __attribute__((naked));
 /* main program starts here */
 int main(void)
 {
-/* Set Arduino digital pins as output as well */
+/* Set Arduino digital pins as input-pullup as well */
 /* Maker Uno only*/
 #ifdef MAKER_UNO
-  DDRD |= 0xFC;
-  PORTD &= ~0xFC;
-  DDRC |= 0x3F;
-  PORTC &= ~0x3F;
-  DDRB |= 0x3F;
-  PORTB &= ~0x3F;
+  PORTB |= 0x3F;
+  PORTD |= 0xFC;
 #endif
   uint8_t ch;
 
