@@ -105,7 +105,7 @@ cp $new_json ~/tmp/makeruno
 echo -n $DEPLOY_KEY > ~/.ssh/deploy_b64
 base64 --decode --ignore-garbage ~/.ssh/deploy_b64 > ~/.ssh/deploy
 chmod 600 ~/.ssh/deploy
-echo -e "Host $DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/deploy" >> ~/.ssh/config
+echo -e "Host $CYTRON_DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/deploy" >> ~/.ssh/config
 
 #update package_cytron_index.json
 git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:CytronTechnologies/CytronTechnologies.github.io.git ~/tmp/cytron
