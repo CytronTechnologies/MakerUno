@@ -91,7 +91,7 @@ else
 rm $old_json
 fi
 
-# deploy key
+# deploy key for makeruno repo
 echo -n $MAKERUNO_DEPLOY_KEY > ~/.ssh/makeruno_deploy_b64
 base64 --decode --ignore-garbage ~/.ssh/makeruno_deploy_b64 > ~/.ssh/makeruno_deploy
 chmod 600 ~/.ssh/makeruno_deploy
@@ -100,5 +100,16 @@ echo -e "Host $DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME
 #update package_cytron_makeruno_index.json
 git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:$TRAVIS_REPO_SLUG.git ~/tmp
 cp $new_json ~/tmp/
+
+# deploy key for CytronTechnologies.github.io repo
+echo -n $DEPLOY_KEY > ~/.ssh/deploy_b64
+base64 --decode --ignore-garbage ~/.ssh/deploy_b64 > ~/.ssh/deploy
+chmod 600 ~/.ssh/deploy
+echo -e "Host $DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/deploy" >> ~/.ssh/config
+
+#update package_cytron_index.json
+git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:CytronTechnologies.github.io.git ~/tmp2
+cp $new_json ~/tmp2/
+
 
 popd
