@@ -41,42 +41,7 @@
             }
           ], 
           "name": "Maker Uno"
-        }, 
-        {
-          "category": "Cytron", 
-          "name": "Maker Uno", 
-          "url": "https://github.com/CytronTechnologies/MakerUno/releases/download/1.1.0-rc2/cytron-makeruno-1.1.0-rc2.zip", 
-          "checksum": "SHA-256:34e24e556f7febf5ef0d878f712ec616ee4f489680df3876ce78b5e3e1cc4b6c", 
-          "help": {
-            "online": "https://forum.cytron.io/"
-          }, 
-          "version": "1.1.0-rc2", 
-          "architecture": "avr", 
-          "archiveFileName": "cytron-makeruno-1.1.0-rc2.zip", 
-          "boards": [
-            {
-              "name": "Maker Uno"
-            }
-          ], 
-          "toolsDependencies": [
-            {
-              "packager": "arduino", 
-              "version": "4.9.2-atmel3.5.4-arduino2", 
-              "name": "avr-gcc"
-            }, 
-            {
-              "packager": "arduino", 
-              "version": "6.3.0-arduino9", 
-              "name": "avrdude"
-            }, 
-            {
-              "packager": "arduino", 
-              "version": "1.1.1", 
-              "name": "arduinoOTA"
-            }
-          ], 
-          "size": "706687"
-        }, 
+        },
         {
           "category": "Cytron", 
           "help": {
