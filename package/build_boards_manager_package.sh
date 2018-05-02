@@ -95,20 +95,20 @@ fi
 echo -n $MAKERUNO_DEPLOY_KEY > ~/.ssh/makeruno_deploy_b64
 base64 --decode --ignore-garbage ~/.ssh/makeruno_deploy_b64 > ~/.ssh/makeruno_deploy
 chmod 600 ~/.ssh/makeruno_deploy
-echo -e "Host $DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/makeruno_deploy" >> ~/.ssh/config
+echo -e "Host $MAKERUNO_DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $MAKERUNO_DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/makeruno_deploy" >> ~/.ssh/config
 
 #update package_cytron_makeruno_index.json
-git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:$TRAVIS_REPO_SLUG.git ~/tmp/makeruno
+git clone $MAKERUNO_DEPLOY_USER_NAME@$MAKERUNO_DEPLOY_HOST_NAME:$TRAVIS_REPO_SLUG.git ~/tmp/makeruno
 cp $new_json ~/tmp/makeruno
 
 # deploy key for CytronTechnologies.github.io repo
-echo -n $DEPLOY_KEY > ~/.ssh/deploy_b64
+echo -n $CYTRON_DEPLOY_KEY > ~/.ssh/deploy_b64
 base64 --decode --ignore-garbage ~/.ssh/deploy_b64 > ~/.ssh/deploy
 chmod 600 ~/.ssh/deploy
-echo -e "Host $CYTRON_DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/deploy" >> ~/.ssh/config
+echo -e "Host $CYTRON_DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $CYTRON_DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/deploy" >> ~/.ssh/config
 
 #update package_cytron_index.json
-git clone $DEPLOY_USER_NAME@$CYTRON_DEPLOY_HOST_NAME:CytronTechnologies/CytronTechnologies.github.io.git ~/tmp/cytron
+git clone $CYTRON_DEPLOY_USER_NAME@$CYTRON_DEPLOY_HOST_NAME:CytronTechnologies/CytronTechnologies.github.io.git ~/tmp/cytron
 cp $new_json ~/tmp/cytron
 
 
