@@ -108,7 +108,7 @@ chmod 600 ~/.ssh/deploy
 echo -e "Host $CYTRON_DEPLOY_HOST_NAME\n\tHostname github.com\n\tUser $DEPLOY_USER_NAME\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/deploy" >> ~/.ssh/config
 
 #update package_cytron_index.json
-git clone $DEPLOY_USER_NAME@$DEPLOY_HOST_NAME:CytronTechnologies/CytronTechnologies.github.io.git ~/tmp/cytron
+git clone $DEPLOY_USER_NAME@$CYTRON_DEPLOY_HOST_NAME:CytronTechnologies/CytronTechnologies.github.io.git ~/tmp/cytron
 cp $new_json ~/tmp/cytron
 
 
